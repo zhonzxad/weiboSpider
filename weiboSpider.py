@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 import codecs
 import csv
@@ -22,7 +22,7 @@ class Weibo(object):
     #cookie = {'Cookie': 'your cookie'}  # 将your cookie替换成自己的cookie
     cookie = {'Cookie': 'ALF=1568962836; SCF=Asa7CUjI-3AhCn-dtNgCJrbr5WRPN7pJRgZNfymvHfwC2AZ0K3lYidaEY5p0O7RUoxg9VDJtFnxFWT55P3btFHI.; SUB=_2A25wWzHqDeRhGeVM6lcT8SzOyTyIHXVTpF-irDV6PUJbkdBeLXegkW1NTKKxLGaXxU00Qb0XsdIhW7XaGmTV8lLm; SUHB=0sqxOImhuKSHtB; SSOLoginState=1566523834; MLOGIN=1; _T_WM=18196871694; watch_times=0; level=7; user_level=7; M_WEIBOCN_PARAMS=uicode%3D20000174; WEIBOCN_FROM=1110106030'}  # 将your cookie替换成自己的cookie
 
-    def __init__(self, user_id = 1629953552, filter=0, pic_download=1, video_download=1):
+    def __init__(self, user_id, filter=0, pic_download=0, video_download=0):
         """Weibo类初始化"""
         if not isinstance(user_id, int):
             sys.exit(u'user_id值应为一串数字形式,请重新输入')
@@ -645,7 +645,7 @@ class Weibo(object):
 def main():
     try:
         # 使用实例,输入一个用户id，所有信息都会存储在wb实例中
-        user_id = 1669879400  # 可以改成任意合法的用户id（爬虫的微博id除外）
+        user_id = 1629953552  # 可以改成任意合法的用户id（爬虫的微博id除外）#1629953552
         filter = 1  # 值为0表示爬取全部微博（原创微博+转发微博），值为1表示只爬取原创微博
         pic_download = 1  # 值为0代表不下载微博原始图片,1代表下载微博原始图片
         video_download = 1  # 值为0代表不下载微博视频,1代表下载微博视频
