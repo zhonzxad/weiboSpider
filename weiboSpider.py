@@ -19,9 +19,10 @@ from tqdm import tqdm
 
 
 class Weibo(object):
-    cookie = {'Cookie': 'your cookie'}  # 将your cookie替换成自己的cookie
+    #cookie = {'Cookie': 'your cookie'}  # 将your cookie替换成自己的cookie
+    cookie = {'Cookie': 'ALF=1568962836; SCF=Asa7CUjI-3AhCn-dtNgCJrbr5WRPN7pJRgZNfymvHfwC2AZ0K3lYidaEY5p0O7RUoxg9VDJtFnxFWT55P3btFHI.; SUB=_2A25wWzHqDeRhGeVM6lcT8SzOyTyIHXVTpF-irDV6PUJbkdBeLXegkW1NTKKxLGaXxU00Qb0XsdIhW7XaGmTV8lLm; SUHB=0sqxOImhuKSHtB; SSOLoginState=1566523834; MLOGIN=1; _T_WM=18196871694; watch_times=0; level=7; user_level=7; M_WEIBOCN_PARAMS=uicode%3D20000174; WEIBOCN_FROM=1110106030'}  # 将your cookie替换成自己的cookie
 
-    def __init__(self, user_id, filter=0, pic_download=0, video_download=0):
+    def __init__(self, user_id = 1629953552, filter=0, pic_download=1, video_download=1):
         """Weibo类初始化"""
         if not isinstance(user_id, int):
             sys.exit(u'user_id值应为一串数字形式,请重新输入')
@@ -35,7 +36,7 @@ class Weibo(object):
         self.filter = filter  # 取值范围为0、1,程序默认值为0,代表要爬取用户的全部微博,1代表只爬取用户的原创微博
         self.pic_download = pic_download  # 取值范围为0、1,程序默认值为0,代表不下载微博原始图片,1代表下载
         self.video_download = video_download  # 取值范围为0、1,程序默认为0,代表不下载微博视频,1代表下载
-        self.nickname = ''  # 用户昵称,如“Dear-迪丽热巴”
+        self.nickname = '璇璇喝喝茶吹吹牛'  # 用户昵称,如“Dear-迪丽热巴”
         self.weibo_num = 0  # 用户全部微博数
         self.got_num = 0  # 爬取到的微博数
         self.following = 0  # 用户关注数
